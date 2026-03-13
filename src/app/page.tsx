@@ -65,18 +65,7 @@ export default function Home() {
         <p>
           Blue Horizon Team is a group of licensed real estate associates.
         </p>
-        <p className="mt-1">
-          &copy; 2026 BHC Coastal Services LLC &middot; Photo by{" "}
-          <a
-            href="https://unsplash.com/photos/q86md0sqdBA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-white/50"
-          >
-            David Martin
-          </a>{" "}
-          on Unsplash
-        </p>
+        <p className="mt-1">&copy; 2026 BHC Coastal Services LLC</p>
       </footer>
     </div>
   );
