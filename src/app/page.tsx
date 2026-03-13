@@ -14,36 +14,30 @@ export default function Home() {
       />
 
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/75" />
 
       <main className="relative z-10 flex max-w-2xl flex-col items-center text-center">
-        {/* Brand mark */}
-        <div className="mb-8 flex items-center gap-3">
-          <div className="h-px w-8 bg-gradient-to-r from-transparent to-amber-400/60" />
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400/80">
-            Charleston, SC
-          </span>
-          <div className="h-px w-8 bg-gradient-to-l from-transparent to-amber-400/60" />
-        </div>
-
         {/* Logo / Brand name */}
-        <h1 className="mb-2 text-5xl font-bold tracking-tight drop-shadow-lg sm:text-6xl">
+        <h1 className="mb-1 text-5xl font-bold tracking-tight drop-shadow-lg sm:text-7xl">
           Blue Horizon
         </h1>
-        <p className="mb-6 text-lg font-light tracking-[0.15em] text-blue-200/80 sm:text-xl">
+        <p className="mb-2 text-base font-semibold uppercase tracking-[0.25em] text-white/90 drop-shadow sm:text-lg">
           TEAM
+        </p>
+        <p className="mb-8 text-sm font-medium uppercase tracking-[0.2em] text-amber-300 drop-shadow">
+          Charleston, South Carolina
         </p>
 
         {/* Divider */}
-        <div className="mb-8 h-px w-24 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+        <div className="mb-8 h-px w-32 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
 
         {/* Tagline */}
-        <p className="mb-4 text-xl font-light leading-relaxed text-white/90 drop-shadow sm:text-2xl">
+        <p className="mb-4 text-xl font-light leading-relaxed text-white drop-shadow-md sm:text-2xl">
           Your Lowcountry real estate experience,{" "}
-          <span className="text-amber-300">reimagined.</span>
+          <span className="font-medium text-amber-200">reimagined.</span>
         </p>
 
-        <p className="mb-12 max-w-md text-sm leading-relaxed text-white/60">
+        <p className="mb-12 max-w-md text-sm leading-relaxed text-white/70 drop-shadow">
           Luxury homes, historic estates, and waterfront living in Charleston.
           We&apos;re building something special&mdash;stay tuned.
         </p>

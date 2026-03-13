@@ -44,7 +44,7 @@ export default function EmailSignup() {
 
   return (
     <form onSubmit={handleSubmit} className="flex w-full max-w-sm flex-col gap-3">
-      <p className="text-sm font-medium tracking-wide text-white/60">
+      <p className="text-sm font-medium tracking-wide text-white/80 drop-shadow">
         Join the First Look List
       </p>
       <div className="flex gap-2">
