@@ -1,65 +1,69 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#0f1b2d] via-[#1a2e4a] to-[#0c1a2e] px-6 text-white">
+      {/* Subtle decorative element */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="absolute -bottom-1/4 -left-1/4 h-[500px] w-[500px] rounded-full bg-amber-500/5 blur-3xl" />
+      </div>
+
+      <main className="relative z-10 flex max-w-2xl flex-col items-center text-center">
+        {/* Brand mark */}
+        <div className="mb-8 flex items-center gap-3">
+          <div className="h-px w-8 bg-gradient-to-r from-transparent to-amber-400/60" />
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-400/80">
+            Charleston, SC
+          </span>
+          <div className="h-px w-8 bg-gradient-to-l from-transparent to-amber-400/60" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+        {/* Logo / Brand name */}
+        <h1 className="mb-2 text-5xl font-bold tracking-tight sm:text-6xl">
+          Blue Horizon
+        </h1>
+        <p className="mb-6 text-lg font-light tracking-[0.15em] text-blue-200/70 sm:text-xl">
+          TEAM
+        </p>
+
+        {/* Divider */}
+        <div className="mb-8 h-px w-24 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent" />
+
+        {/* Tagline */}
+        <p className="mb-4 text-xl font-light leading-relaxed text-white/80 sm:text-2xl">
+          Your Lowcountry real estate experience,{" "}
+          <span className="text-amber-300/90">reimagined.</span>
+        </p>
+
+        <p className="mb-12 max-w-md text-sm leading-relaxed text-white/50">
+          Luxury homes, historic estates, and waterfront living in Charleston.
+          We&apos;re building something special&mdash;stay tuned.
+        </p>
+
+        {/* Coming Soon badge */}
+        <div className="mb-12 rounded-full border border-white/10 bg-white/5 px-6 py-2.5 text-sm font-medium tracking-wide text-white/70 backdrop-blur-sm">
+          Coming Soon &mdash; 2026
+        </div>
+
+        {/* Social link */}
+        <div className="flex items-center gap-6">
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://instagram.com/BlueHorizonCHS"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-sm text-white/40 transition-colors hover:text-amber-300/80"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            @BlueHorizonCHS
           </a>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="absolute bottom-6 text-center text-[11px] leading-relaxed text-white/25">
+        <p>
+          Blue Horizon Team is a group of licensed real estate associates.
+        </p>
+        <p className="mt-1">&copy; 2026 BHC Coastal Services LLC</p>
+      </footer>
     </div>
   );
 }
