@@ -1,3 +1,5 @@
+import EmailSignup from "./components/email-signup";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[#0f1b2d] via-[#1a2e4a] to-[#0c1a2e] px-6 text-white">
@@ -39,9 +41,9 @@ export default function Home() {
           We&apos;re building something special&mdash;stay tuned.
         </p>
 
-        {/* Coming Soon badge */}
-        <div className="mb-12 rounded-full border border-white/10 bg-white/5 px-6 py-2.5 text-sm font-medium tracking-wide text-white/70 backdrop-blur-sm">
-          Coming Soon &mdash; 2026
+        {/* Email signup */}
+        <div className="mb-12 w-full flex justify-center">
+          <EmailSignup />
         </div>
 
         {/* Social link */}
