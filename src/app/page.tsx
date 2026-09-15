@@ -10,8 +10,9 @@ const EMAIL = "jenleecharleston@kw.com";
 const INK = "#16202e";
 const MUTED = "#5a6676";
 const LINE = "#e3e8ef";
-const PAPER = "#fbfaf8";
-const SAND = "#f4f1ec";
+const PAPER = "#fdfcfa";
+const SAND = "#f3efe8";
+const DEEP = "#eae4d9";
 const GOLD = "#b8862c";
 
 export default function Home() {
@@ -65,85 +66,78 @@ export default function Home() {
       </section>
 
       {/* -------------------------------------------------------------- intro */}
-      <section className="px-6 py-20 sm:py-28">
-        <div className="mx-auto max-w-2xl text-center">
+      <Band tone={PAPER} width="max-w-2xl">
+        <div className="text-center">
           <Eyebrow>Jen Lee, REALTOR&reg;</Eyebrow>
           <p className="mt-5 text-[22px] font-light leading-relaxed sm:text-[26px]">
             I help buyers and sellers across Charleston and the surrounding islands, with Keller
             Williams Realty Charleston-West Ashley.
           </p>
         </div>
-      </section>
+      </Band>
 
       {/* -------------------------------------------------------------- about */}
-      <section className="px-6 pb-20 sm:pb-24">
-        <div className="mx-auto max-w-3xl">
-          <div className="rounded-3xl px-7 py-12 sm:px-14 sm:py-16" style={{ background: SAND }}>
-            <Eyebrow>About Jen</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              A different background, on purpose.
-            </h2>
-            <div className="mt-7 space-y-5 text-[16px] leading-relaxed" style={{ color: MUTED }}>
-              <p>
-                Before real estate I spent my career in healthcare, most recently as an outpatient
-                care manager, with a master&apos;s degree in social work behind it. That work was
-                advocacy: sitting with people during complicated, high-stakes decisions, listening
-                properly, and finding the option that actually fits them.
-              </p>
-              <p>
-                A home is not a transaction to get through. It is where the rest of your life
-                happens, and the decision deserves someone who slows down, explains the parts that
-                are confusing, and says plainly when something is not right for you.
-              </p>
-              <p>
-                That is what I bring to buying and selling: care with the details, straight answers,
-                and the patience to make sure you understand every document you sign.
-              </p>
-            </div>
-
-            <dl
-              className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-t pt-8 sm:grid-cols-4"
-              style={{ borderColor: "#e2ddd4" }}
-            >
-              <Fact label="License" value="SC #147724" />
-              <Fact label="Brokerage" value="KW Charleston-West Ashley" />
-              <Fact label="Serving" value="Charleston & the islands" />
-              <Fact label="Works with" value="Buyers & sellers" />
-            </dl>
-          </div>
+      <Band tone={SAND}>
+        <Eyebrow>About Jen</Eyebrow>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          A different background, on purpose.
+        </h2>
+        <div className="mt-7 space-y-5 text-[16px] leading-relaxed" style={{ color: MUTED }}>
+          <p>
+            Before real estate I spent my career in healthcare, most recently as an outpatient care
+            manager, with a master&apos;s degree in social work behind it. That work was advocacy:
+            sitting with people during complicated, high-stakes decisions, listening properly, and
+            finding the option that actually fits them.
+          </p>
+          <p>
+            A home is not a transaction to get through. It is where the rest of your life happens,
+            and the decision deserves someone who slows down, explains the parts that are confusing,
+            and says plainly when something is not right for you.
+          </p>
+          <p>
+            That is what I bring to buying and selling: care with the details, straight answers, and
+            the patience to make sure you understand every document you sign.
+          </p>
         </div>
-      </section>
+
+        <dl
+          className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-t pt-8 sm:grid-cols-4"
+          style={{ borderColor: "#e0d9cc" }}
+        >
+          <Fact label="License" value="SC #147724" />
+          <Fact label="Brokerage" value="KW Charleston-West Ashley" />
+          <Fact label="Serving" value="Charleston & the islands" />
+          <Fact label="Works with" value="Buyers & sellers" />
+        </dl>
+      </Band>
 
       {/* ------------------------------------------------------------ services */}
-      <section className="px-6 pb-20 sm:pb-24">
-        <div className="mx-auto max-w-5xl">
-          <div className="text-center">
-            <Eyebrow>How I help</Eyebrow>
-            <h2 className="mx-auto mt-3 max-w-xl text-3xl font-bold tracking-tight sm:text-4xl">
-              Whichever side of the deal you are on.
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            <Card
-              title="Buying"
-              body="From the first tour to the closing table. I explain what you are signing, flag what inspections turn up, and negotiate with your interests in front."
-            />
-            <Card
-              title="Selling"
-              body="Pricing grounded in what is actually happening on your street, preparation that earns its cost back, and marketing that reaches the people who buy here."
-            />
-            <Card
-              title="Relocating"
-              body="New to the Lowcountry? I will walk you through neighbourhoods, commutes, flood zones and what living here is really like before you commit."
-            />
-          </div>
+      <Band tone={PAPER} width="max-w-5xl">
+        <div className="text-center">
+          <Eyebrow>How I help</Eyebrow>
+          <h2 className="mx-auto mt-3 max-w-xl text-3xl font-bold tracking-tight sm:text-4xl">
+            Whichever side of the deal you are on.
+          </h2>
         </div>
-      </section>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <Card
+            title="Buying"
+            body="From the first tour to the closing table. I explain what you are signing, flag what inspections turn up, and negotiate with your interests in front."
+          />
+          <Card
+            title="Selling"
+            body="Pricing grounded in what is actually happening on your street, preparation that earns its cost back, and marketing that reaches the people who buy here."
+          />
+          <Card
+            title="Relocating"
+            body="New to the Lowcountry? I will walk you through neighbourhoods, commutes, flood zones and what living here is really like before you commit."
+          />
+        </div>
+      </Band>
 
       {/* --------------------------------------------------------------- areas */}
-      <section className="px-6 pb-20 sm:pb-24">
-        <div className="mx-auto max-w-4xl text-center">
+      <Band tone={SAND} width="max-w-4xl">
+        <div className="text-center">
           <Eyebrow>Where I work</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
             Charleston and the Lowcountry
@@ -166,48 +160,43 @@ export default function Home() {
               <li
                 key={area}
                 className="rounded-full border bg-white px-4 py-2 text-[13px]"
-                style={{ borderColor: LINE, color: MUTED }}
+                style={{ borderColor: "#e5ded1", color: MUTED }}
               >
                 {area}
               </li>
             ))}
           </ul>
         </div>
-      </section>
+      </Band>
 
       {/* ------------------------------------------------------------ firstlook */}
-      <section className="px-6 pb-20 sm:pb-24">
-        <div className="mx-auto max-w-3xl">
-          <div
-            className="rounded-3xl border px-7 py-12 text-center sm:px-14"
-            style={{ background: "#ffffff", borderColor: LINE }}
-          >
-            <Eyebrow>First Look List</Eyebrow>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              See it before it hits the feeds.
-            </h2>
-            <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed" style={{ color: MUTED }}>
-              An occasional note when something worth knowing about comes up: a listing before it
-              goes live, or a straight read on where the Charleston market actually is. No spam, and
-              you can leave any time.
-            </p>
-            <div className="mt-8">
-              <EmailSignup />
-            </div>
+      <Band tone={PAPER}>
+        <div className="text-center">
+          <Eyebrow>First Look List</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            See it before it hits the feeds.
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed" style={{ color: MUTED }}>
+            An occasional note when something worth knowing about comes up: a listing before it goes
+            live, or a straight read on where the Charleston market actually is. No spam, and you can
+            leave any time.
+          </p>
+          <div className="mt-8">
+            <EmailSignup />
           </div>
         </div>
-      </section>
+      </Band>
 
       {/* ------------------------------------------------------------- contact */}
-      <section className="px-6 pb-20 sm:pb-28">
-        <div className="mx-auto max-w-3xl text-center">
+      <Band tone={SAND}>
+        <div className="text-center">
           <Eyebrow>Get in touch</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
             Let&apos;s talk about your move.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed" style={{ color: MUTED }}>
-            No pressure and no obligation. Even if you are a year out, it is worth a conversation
-            now so the timing works when you are ready.
+            No pressure and no obligation. Even if you are a year out, it is worth a conversation now
+            so the timing works when you are ready.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -220,8 +209,8 @@ export default function Home() {
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="w-full rounded-full border bg-white px-7 py-3.5 text-[15px] font-semibold transition-colors hover:bg-[#f4f1ec] sm:w-auto"
-              style={{ borderColor: LINE, color: INK }}
+              className="w-full rounded-full border bg-white px-7 py-3.5 text-[15px] font-semibold transition-colors hover:bg-[#faf7f2] sm:w-auto"
+              style={{ borderColor: "#e5ded1", color: INK }}
             >
               {EMAIL}
             </a>
@@ -243,10 +232,10 @@ export default function Home() {
             @BlueHorizonCHS
           </a>
         </div>
-      </section>
+      </Band>
 
       {/* -------------------------------------------------------------- footer */}
-      <footer className="border-t px-6 py-12" style={{ borderColor: LINE, background: SAND }}>
+      <footer className="px-6 py-12" style={{ background: DEEP }}>
         <div
           className="mx-auto max-w-4xl text-center text-[12px] leading-relaxed"
           style={{ color: MUTED }}
@@ -270,6 +259,24 @@ export default function Home() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/** Full-bleed colour band with the content constrained inside it. Alternating these gives the
+ *  page rhythm without needing rules or boxes to separate one idea from the next. */
+function Band({
+  tone,
+  width = "max-w-3xl",
+  children,
+}: {
+  tone: string;
+  width?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="px-6 py-20 sm:py-24" style={{ background: tone }}>
+      <div className={`mx-auto ${width}`}>{children}</div>
+    </section>
   );
 }
 
