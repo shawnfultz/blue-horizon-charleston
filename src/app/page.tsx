@@ -6,18 +6,24 @@ const PHONE = "(912) 272-8389";
 const PHONE_HREF = "tel:+19122728389";
 const EMAIL = "jenleecharleston@kw.com";
 
-/* Ink on paper, with the photograph carrying the only dark area on the page. */
-const INK = "#16202e";
-const MUTED = "#5a6676";
-const LINE = "#e3e8ef";
-const PAPER = "#fdfcfa";
-const SAND = "#f3efe8";
-const DEEP = "#eae4d9";
-const GOLD = "#b8862c";
+/*
+ * Coastal palette. The page should read like water and light rather than paper: a pale
+ * blue-white ground, shallow-water bands, and one deep-ocean section so the eye has somewhere
+ * to land. Brass carries over from the sunset in the hero photograph and keeps the two halves
+ * of the page speaking to each other.
+ */
+const INK = "#0d2436";      // deep ocean, body text
+const MUTED = "#52687c";    // slate blue, secondary text
+const MIST = "#f7fafc";     // pale blue-white, base band
+const SHALLOW = "#e7f0f6";  // shallow water, alternate band
+const DEEP = "#0e2c40";     // deep ocean, feature band
+const BRASS = "#c08f31";    // warm accent, picked from the sunset
+const SEA = "#1c6b8c";      // mid-tone blue for links and edges
+const LINE = "#d6e5ee";
 
 export default function Home() {
   return (
-    <div style={{ background: PAPER, color: INK }}>
+    <div style={{ background: MIST, color: INK }}>
       {/* ---------------------------------------------------------------- hero */}
       <section className="relative flex min-h-[82svh] flex-col items-center justify-center px-6 py-24 text-center">
         <Image
@@ -27,7 +33,13 @@ export default function Home() {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/35 to-black/55" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(7,26,40,0.52) 0%, rgba(7,26,40,0.34) 45%, rgba(13,41,60,0.72) 100%)",
+          }}
+        />
 
         <div className="relative z-10 flex max-w-2xl flex-col items-center text-white">
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-200 drop-shadow">
@@ -66,7 +78,7 @@ export default function Home() {
       </section>
 
       {/* -------------------------------------------------------------- intro */}
-      <Band tone={PAPER} width="max-w-2xl">
+      <Band tone={MIST} width="max-w-2xl">
         <div className="text-center">
           <Eyebrow>Jen Lee, REALTOR&reg;</Eyebrow>
           <p className="mt-5 text-[22px] font-light leading-relaxed sm:text-[26px]">
@@ -77,7 +89,7 @@ export default function Home() {
       </Band>
 
       {/* -------------------------------------------------------------- about */}
-      <Band tone={SAND}>
+      <Band tone={SHALLOW}>
         <Eyebrow>About Jen</Eyebrow>
         <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
           A different background, on purpose.
@@ -102,7 +114,7 @@ export default function Home() {
 
         <dl
           className="mt-10 grid grid-cols-2 gap-x-6 gap-y-6 border-t pt-8 sm:grid-cols-4"
-          style={{ borderColor: "#e0d9cc" }}
+          style={{ borderColor: LINE }}
         >
           <Fact label="License" value="SC #147724" />
           <Fact label="Brokerage" value="KW Charleston-West Ashley" />
@@ -112,7 +124,7 @@ export default function Home() {
       </Band>
 
       {/* ------------------------------------------------------------ services */}
-      <Band tone={PAPER} width="max-w-5xl">
+      <Band tone={MIST} width="max-w-5xl">
         <div className="text-center">
           <Eyebrow>How I help</Eyebrow>
           <h2 className="mx-auto mt-3 max-w-xl text-3xl font-bold tracking-tight sm:text-4xl">
@@ -136,7 +148,7 @@ export default function Home() {
       </Band>
 
       {/* --------------------------------------------------------------- areas */}
-      <Band tone={SAND} width="max-w-4xl">
+      <Band tone={SHALLOW} width="max-w-4xl">
         <div className="text-center">
           <Eyebrow>Where I work</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -159,8 +171,8 @@ export default function Home() {
             ].map((area) => (
               <li
                 key={area}
-                className="rounded-full border bg-white px-4 py-2 text-[13px]"
-                style={{ borderColor: "#e5ded1", color: MUTED }}
+                className="rounded-full border bg-white/70 px-4 py-2 text-[13px] backdrop-blur-sm"
+                style={{ borderColor: LINE, color: MUTED }}
               >
                 {area}
               </li>
@@ -170,13 +182,15 @@ export default function Home() {
       </Band>
 
       {/* ------------------------------------------------------------ firstlook */}
-      <Band tone={PAPER}>
-        <div className="text-center">
-          <Eyebrow>First Look List</Eyebrow>
+      <Band tone={DEEP}>
+        <div className="text-center text-white">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.25em]" style={{ color: "#e5b95c" }}>
+            First Look List
+          </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
             See it before it hits the feeds.
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed" style={{ color: MUTED }}>
+          <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/65">
             An occasional note when something worth knowing about comes up: a listing before it goes
             live, or a straight read on where the Charleston market actually is. No spam, and you can
             leave any time.
@@ -188,7 +202,7 @@ export default function Home() {
       </Band>
 
       {/* ------------------------------------------------------------- contact */}
-      <Band tone={SAND}>
+      <Band tone={SHALLOW}>
         <div className="text-center">
           <Eyebrow>Get in touch</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -209,8 +223,8 @@ export default function Home() {
             </a>
             <a
               href={`mailto:${EMAIL}`}
-              className="w-full rounded-full border bg-white px-7 py-3.5 text-[15px] font-semibold transition-colors hover:bg-[#faf7f2] sm:w-auto"
-              style={{ borderColor: "#e5ded1", color: INK }}
+              className="w-full rounded-full border bg-white px-7 py-3.5 text-[15px] font-semibold transition-colors hover:bg-[#eef5f9] sm:w-auto"
+              style={{ borderColor: LINE, color: INK }}
             >
               {EMAIL}
             </a>
@@ -227,7 +241,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-block text-[13px] font-medium transition-opacity hover:opacity-70"
-            style={{ color: GOLD }}
+            style={{ color: BRASS }}
           >
             @BlueHorizonCHS
           </a>
@@ -236,10 +250,7 @@ export default function Home() {
 
       {/* -------------------------------------------------------------- footer */}
       <footer className="px-6 py-12" style={{ background: DEEP }}>
-        <div
-          className="mx-auto max-w-4xl text-center text-[12px] leading-relaxed"
-          style={{ color: MUTED }}
-        >
+        <div className="mx-auto max-w-4xl text-center text-[12px] leading-relaxed text-white/45">
           <p>
             Jen Lee, REALTOR<span className="align-super text-[9px]">&reg;</span>, South Carolina
             license #147724. Blue Horizon Team is a group of licensed real estate associates with
@@ -284,7 +295,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p
       className="text-[11px] font-semibold uppercase tracking-[0.25em]"
-      style={{ color: GOLD }}
+      style={{ color: BRASS }}
     >
       {children}
     </p>
@@ -296,7 +307,7 @@ function Fact({ label, value }: { label: string; value: string }) {
     <div>
       <dt
         className="text-[10px] font-semibold uppercase tracking-[0.18em]"
-        style={{ color: "#8b7f6d" }}
+        style={{ color: SEA }}
       >
         {label}
       </dt>

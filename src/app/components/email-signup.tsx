@@ -36,7 +36,7 @@ export default function EmailSignup() {
 
   if (status === "success") {
     return (
-      <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-6 py-4 text-center text-sm font-medium text-emerald-800">
+      <div className="rounded-xl border border-emerald-400/30 bg-emerald-400/10 px-6 py-4 text-center text-sm font-medium text-emerald-200">
         You&apos;re on the list. I&apos;ll be in touch.
       </div>
     );
@@ -55,18 +55,18 @@ export default function EmailSignup() {
           placeholder="you@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="min-w-0 flex-1 rounded-xl border border-[#d9dfe8] bg-white px-4 py-3 text-[15px] text-[#1a2332] shadow-sm placeholder:text-[#9aa4b2] focus:border-[#1a2332] focus:outline-none focus:ring-1 focus:ring-[#1a2332]"
+          className="min-w-0 flex-1 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-[15px] text-white placeholder:text-white/45 focus:border-[#e5b95c] focus:outline-none focus:ring-1 focus:ring-[#e5b95c]/60"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="flex-none rounded-xl bg-[#1a2332] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#2b3a55] disabled:opacity-50"
+          className="flex-none rounded-xl bg-[#e5b95c] px-6 py-3 text-[15px] font-semibold text-[#0e2c40] transition-colors hover:bg-[#f0c977] disabled:opacity-50"
         >
           {status === "loading" ? "..." : "Notify Me"}
         </button>
       </div>
       {status === "error" && (
-        <p className="text-[13px] text-red-600">{errorMsg}</p>
+        <p className="text-[13px] text-red-300">{errorMsg}</p>
       )}
     </form>
   );
