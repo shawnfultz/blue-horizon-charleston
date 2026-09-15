@@ -36,36 +36,37 @@ export default function EmailSignup() {
 
   if (status === "success") {
     return (
-      <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/10 px-6 py-4 text-center text-sm text-emerald-300">
-        You&apos;re on the list! We&apos;ll be in touch soon.
+      <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-6 py-4 text-center text-sm font-medium text-emerald-800">
+        You&apos;re on the list. I&apos;ll be in touch.
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full max-w-sm flex-col gap-3">
-      <p className="text-sm font-medium tracking-wide text-white/80 drop-shadow">
-        Join the First Look List
-      </p>
+    <form onSubmit={handleSubmit} className="mx-auto flex w-full max-w-md flex-col gap-2.5">
+      <label htmlFor="first-look-email" className="sr-only">
+        Email address
+      </label>
       <div className="flex gap-2">
         <input
+          id="first-look-email"
           type="email"
           required
           placeholder="you@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-blue-400/50 focus:outline-none focus:ring-1 focus:ring-blue-400/30"
+          className="min-w-0 flex-1 rounded-xl border border-[#d9dfe8] bg-white px-4 py-3 text-[15px] text-[#1a2332] shadow-sm placeholder:text-[#9aa4b2] focus:border-[#1a2332] focus:outline-none focus:ring-1 focus:ring-[#1a2332]"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="rounded-lg bg-amber-500/90 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-amber-500 disabled:opacity-50"
+          className="flex-none rounded-xl bg-[#1a2332] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#2b3a55] disabled:opacity-50"
         >
           {status === "loading" ? "..." : "Notify Me"}
         </button>
       </div>
       {status === "error" && (
-        <p className="text-xs text-red-400">{errorMsg}</p>
+        <p className="text-[13px] text-red-600">{errorMsg}</p>
       )}
     </form>
   );
