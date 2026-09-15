@@ -16,31 +16,40 @@ export const metadata: Metadata = {
   },
 };
 
+/* Same coastal palette as the homepage: deep ocean masthead, light body below it. */
+const INK = "#0d2436";
+const MUTED = "#52687c";
+const MIST = "#f7fafc";
+const SHALLOW = "#e7f0f6";
+const DEEP = "#0e2c40";
+const BRASS = "#c08f31";
+const LINE = "#d6e5ee";
+
 export default function DocusignIntegration() {
   return (
-    <div className="min-h-screen bg-[#111826] text-white">
-      <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-        <header className="mb-14">
-          <Link
-            href="/"
-            className="text-sm text-white/45 transition-colors hover:text-amber-300/80"
-          >
-            Blue Horizon Team
+    <div className="min-h-screen" style={{ background: MIST, color: INK }}>
+      <header className="px-6 py-14 text-white sm:py-20" style={{ background: DEEP }}>
+        <div className="mx-auto max-w-3xl">
+          <Link href="/" className="text-sm text-white/45 transition-colors hover:text-white/80">
+            &larr; Blue Horizon Team
           </Link>
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.25em] text-amber-300">
+          <p
+            className="mt-8 text-[11px] font-semibold uppercase tracking-[0.25em]"
+            style={{ color: "#e5b95c" }}
+          >
             Integration overview
           </p>
-          <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-            Docusign eSignature
-          </h1>
-          <p className="mt-5 text-lg font-light leading-relaxed text-white/70">
-            A private integration that prepares South Carolina REALTORS<span className="align-super text-xs">®</span> forms,
-            sends them for signature through Docusign, and files the signed copies. Built for and used
-            by the licensed agents of the Blue Horizon Team.
+          <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Docusign eSignature</h1>
+          <p className="mt-5 max-w-2xl text-lg font-light leading-relaxed text-white/70">
+            A private integration that prepares South Carolina REALTORS
+            <span className="align-super text-xs">&reg;</span> forms, sends them for signature
+            through Docusign, and files the signed copies. Built for and used by the licensed
+            agents of the Blue Horizon Team.
           </p>
-          <div className="mt-8 h-px w-32 bg-gradient-to-r from-amber-400/50 to-transparent" />
-        </header>
+        </div>
+      </header>
 
+      <div className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
         <Section title="Who uses it">
           <p>
             This is an internal business tool. It is used by licensed real estate agents of the Blue
@@ -101,7 +110,7 @@ export default function DocusignIntegration() {
           </ul>
         </Section>
 
-        <Section title="How it uses the Docusign API">
+        <Section title="How it uses the Docusign API" tone={SHALLOW}>
           <p>
             The integration uses the Docusign eSignature REST API and authenticates with the JWT
             Grant flow, using an RSA key pair. No Docusign password is ever collected or stored.
@@ -149,7 +158,7 @@ export default function DocusignIntegration() {
             Technical questions about this integration, including from Docusign, can go to{" "}
             <a
               href="mailto:shawn@1322customs.com"
-              className="text-amber-300 underline-offset-4 hover:underline"
+              className="font-medium underline-offset-4 hover:underline" style={{ color: BRASS }}
             >
               shawn@1322customs.com
             </a>
@@ -157,7 +166,7 @@ export default function DocusignIntegration() {
           </p>
         </Section>
 
-        <footer className="mt-16 border-t border-white/10 pt-8 text-xs leading-relaxed text-white/35">
+        <footer className="mt-16 border-t pt-8 text-xs leading-relaxed" style={{ borderColor: LINE, color: MUTED }}>
           <p>
             Blue Horizon Team is a group of licensed real estate associates with Keller Williams
             Realty Charleston-West Ashley. Each Keller Williams<span className="align-super">®</span>{" "}
@@ -173,11 +182,31 @@ export default function DocusignIntegration() {
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({
+  title,
+  tone,
+  children,
+}: {
+  title: string;
+  tone?: string;
+  children: React.ReactNode;
+}) {
+  if (tone) {
+    return (
+      <section className="mb-11 rounded-2xl px-7 py-9 sm:px-9" style={{ background: tone }}>
+        <h2 className="mb-4 text-xl font-semibold tracking-tight">{title}</h2>
+        <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: MUTED }}>
+          {children}
+        </div>
+      </section>
+    );
+  }
   return (
-    <section className="mb-12">
-      <h2 className="mb-4 text-xl font-semibold tracking-tight text-white">{title}</h2>
-      <div className="space-y-4 text-[15px] leading-relaxed text-white/70">{children}</div>
+    <section className="mb-11 border-t pt-9 first:border-t-0 first:pt-0" style={{ borderColor: LINE }}>
+      <h2 className="mb-4 text-xl font-semibold tracking-tight">{title}</h2>
+      <div className="space-y-4 text-[15px] leading-relaxed" style={{ color: MUTED }}>
+        {children}
+      </div>
     </section>
   );
 }
@@ -185,7 +214,10 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Step({ n, children }: { n: number; children: React.ReactNode }) {
   return (
     <li className="flex gap-4">
-      <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-amber-400/15 text-xs font-bold text-amber-300">
+      <span
+        className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full text-xs font-bold text-white"
+        style={{ background: BRASS }}
+      >
         {n}
       </span>
       <span>{children}</span>
@@ -196,12 +228,12 @@ function Step({ n, children }: { n: number; children: React.ReactNode }) {
 function Item({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex gap-3">
-      <span className="mt-2 h-1 w-1 flex-none rounded-full bg-amber-400/60" />
+      <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full" style={{ background: BRASS }} />
       <span>{children}</span>
     </li>
   );
 }
 
 function Term({ children }: { children: React.ReactNode }) {
-  return <span className="font-semibold text-white/90">{children}</span>;
+  return <span className="font-semibold" style={{ color: INK }}>{children}</span>;
 }
