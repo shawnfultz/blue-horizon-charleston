@@ -8,21 +8,21 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Blue Horizon Team | Charleston, SC Real Estate — Coming Soon",
+  title: "Jen Lee, REALTOR® | Blue Horizon Team | Charleston, SC Real Estate",
   description:
-    "Experience the Lowcountry lifestyle with the Blue Horizon Team. Discover luxury homes, historic estates, and waterfront living in Charleston, SC. Coming soon.",
+    "Jen Lee is a REALTOR® with Keller Williams Realty Charleston-West Ashley, helping buyers and sellers across Charleston, Mount Pleasant, James Island, West Ashley and the Lowcountry.",
   openGraph: {
-    title: "Blue Horizon Team | Charleston, SC Real Estate",
+    title: "Jen Lee, REALTOR® | Blue Horizon Team, Charleston SC",
     description:
-      "Discover luxury homes, historic estates, and waterfront living in Charleston, SC with the Blue Horizon Team.",
-    url: "https://bluehorizoncharleston.com",
+      "Buying or selling in the Lowcountry, with someone in your corner. Jen Lee, Keller Williams Realty Charleston-West Ashley.",
+    url: "https://www.bluehorizoncharleston.com",
     siteName: "Blue Horizon Team",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blue Horizon Team | Charleston, SC Real Estate",
+    title: "Jen Lee, REALTOR® | Blue Horizon Team, Charleston SC",
     description:
       "Discover luxury homes, historic estates, and waterfront living in Charleston, SC.",
   },
@@ -36,6 +36,13 @@ export const metadata: Metadata = {
     "James Island real estate",
     "West Ashley homes",
     "relocating to Charleston SC",
+    "Jen Lee realtor",
+    "Jen Lee Charleston",
+    "Keller Williams Charleston West Ashley",
+    "Charleston buyers agent",
+    "Daniel Island homes",
+    "Sullivan's Island real estate",
+    "Folly Beach homes for sale",
   ],
 };
 

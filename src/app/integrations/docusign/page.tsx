@@ -146,12 +146,12 @@ export default function DocusignIntegration() {
 
         <Section title="Contact">
           <p>
-            Questions about this integration, including from Docusign, can go to{" "}
+            Technical questions about this integration, including from Docusign, can go to{" "}
             <a
-              href="mailto:jenleecharleston@kw.com"
+              href="mailto:shawn@1322customs.com"
               className="text-amber-300 underline-offset-4 hover:underline"
             >
-              jenleecharleston@kw.com
+              shawn@1322customs.com
             </a>
             .
           </p>
