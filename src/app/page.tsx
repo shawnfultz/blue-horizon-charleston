@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import EmailSignup from "./components/email-signup";
+import SaxtonWidget from "./components/saxton-widget";
 
 const PHONE = "(912) 272-8389";
 const PHONE_HREF = "tel:+19122728389";
@@ -147,8 +148,41 @@ export default function Home() {
         </div>
       </Band>
 
+      {/* ----------------------------------------------------------- financing */}
+      <Band tone={SHALLOW} width="max-w-3xl">
+        <div className="text-center">
+          <Eyebrow>Financing</Eyebrow>
+          <h2 className="mx-auto mt-3 max-w-xl text-3xl font-bold tracking-tight sm:text-4xl">
+            Know your number before you tour.
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-[16px] leading-relaxed" style={{ color: MUTED }}>
+            The strongest offers come from buyers who already have their financing settled, and in
+            a market this quick that matters more than almost anything else. Saxton Mortgage is who
+            I send my buyers to: they pick up the phone, they explain the numbers in plain language,
+            and they close when they say they will.
+          </p>
+          <p className="mx-auto mt-4 max-w-xl text-[16px] leading-relaxed" style={{ color: MUTED }}>
+            Start your application below, or pick it back up where you left off. It goes straight to
+            their secure portal &mdash; nothing comes to me.
+          </p>
+        </div>
+
+        <div
+          className="mt-10 overflow-hidden rounded-2xl border bg-white shadow-[0_1px_3px_rgba(22,32,46,0.05)]"
+          style={{ borderColor: LINE }}
+        >
+          <SaxtonWidget />
+        </div>
+
+        <p className="mx-auto mt-6 max-w-xl text-center text-[12px] leading-relaxed" style={{ color: MUTED }}>
+          Saxton Mortgage, LLC (NMLS #1717191) is a separate company. You are free to shop for a
+          mortgage and to use any lender you choose &mdash; working with me does not require
+          working with them.
+        </p>
+      </Band>
+
       {/* --------------------------------------------------------------- areas */}
-      <Band tone={SHALLOW} width="max-w-4xl">
+      <Band tone={MIST} width="max-w-4xl">
         <div className="text-center">
           <Eyebrow>Where I work</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
